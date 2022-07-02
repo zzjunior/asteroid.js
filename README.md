@@ -1,2 +1,2 @@
 # asteroid.js
-ASTEROID game que estou tentando fazer, para estudar Java script...
+Game que estou tentando produzir para estudar JavaScript
