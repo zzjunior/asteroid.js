@@ -6,11 +6,15 @@ var font = [];
 var img = [];
 var x;
 var y;
-var tela = 1;
+var xanalogic2 = 500;
+var yanalogic2 = 660;
+var xanalogic = 650;
+var yanalogic = 660;
+var tela = 0;
 var contador=0;
 var tempo=0;
 function preload() {
-img[0] = loadImage('./images/nave1.png');
+img[0] = loadImage("./images/nave1.png");
 img[1] = loadImage('./images/Untitled-2.png');
 img[2] = loadImage('./images/configu.png');
   asteroid[0] = loadImage("./images/asteroid.png");
@@ -73,9 +77,13 @@ img[2] = loadImage('./images/configu.png');
 }
 
 function setup() {
-  createCanvas(1366,768);
+  createCanvas(1280,720);
   x = 275;
   y = 420;
+  xanalogic2 = 500;
+  yanalogic2 = 660;
+  xanalogic = 650;
+  yanalogic = 660;
   xA = 290;
   // asteroids caindo // 
       for ( i=0; i<16; i++){
@@ -93,25 +101,39 @@ tempo++;
   }
   if(tela==0){
     //Movimentação
-    if(x>1366){x=0;}
-    if(x<0){x=1366;}
-    if(y>768){y=0;}
-    if(y<0){y=768;}
+    if(x>1280){x=0;}
+    if(x<0){x=1280;}
+    if(y>720){y=0;}
+    if(y<0){y=720;}
     //
     fase1();
 }
   }
 function mouseClicked(){
+  if(tela==1){
   // start boton
     if(mouseY > 450&& mouseY < 450+50 &&mouseX > 530 && mouseX < 530 + 250){
       tela=0;
     }
+  }
+if(tela==0){
   // configuracoes boton
-     if(mouseY > 15&& mouseY < 15+50 &&mouseX > 1300 && mouseX < 1300 + 50){
+     if(mouseY > 15&& mouseY < 15+50 &&mouseX > 1220 && mouseX < 1220 + 50){
         tela=2;
       }
+  // analogic's direita e esquerda
+  if(mouseY > yanalogic&& mouseY < yanalogic+50 &&mouseX > xanalogic && mouseX < xanalogic + 80){
+    x = x + 20;
+  }
+  if(mouseY > yanalogic2&& mouseY < yanalogic2+50 &&mouseX > xanalogic2 && mouseX < xanalogic2 + 80){
+   x = x - 20;
+  }
+  // analogic's acima e abaixo
+ }
+if(tela==2){
   //voltar menu boton
-    if(mouseY > 330&& mouseY < 330+50 &&mouseX > 590 && mouseX < 590 + 220){
+    if(mouseY > 330&& mouseY < 330+50 &&mouseX > 550 && mouseX < 550 + 220){
       tela=1;
     }
+  }
 }
