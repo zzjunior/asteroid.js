@@ -114,7 +114,7 @@ tempo++;
 function mouseClicked(){
   if(tela==1){
   // start boton
-    if(mouseY > 450&& mouseY < 450+50 &&mouseX > 530 && mouseX < 530 + 250){
+    if(mouseY > 400&& mouseY < 400+50 &&mouseX > 270 && mouseX < 270 + 250){
       tela=0;
     }
   }
